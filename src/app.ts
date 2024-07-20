@@ -2,7 +2,7 @@ import express from 'express';
 
 import { connectdb } from './utils/db';
 import UserRoutes from './routes/user';
-
+import BlogRouter from './routes/blog'
 
 const app = express();
 
@@ -15,8 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded())
 
                    
-app.use('/api', UserRoutes)
-
+app.use('/api', UserRoutes);
+app.use('/api', BlogRouter)
 
 
 app.listen(PORT, () => {
